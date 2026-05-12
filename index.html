@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure Protein Farms</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:'Poppins',sans-serif;
+            background:#f8f8f8;
+            color:#222;
+            overflow-x:hidden;
+        }
+
+        img{
+            width:100%;
+            display:block;
+        }
+
+        a{
+            text-decoration:none;
+        }
+
+        .container{
+            width:100%;
+            max-width:1200px;
+            margin:auto;
+            padding:0 20px;
+        }
+
+        /* NAVBAR */
+
+        header{
+            background:#fff;
+            position:sticky;
+            top:0;
+            z-index:1000;
+            box-shadow:0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .navbar{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:20px 0;
+        }
+
+        .logo{
+            font-size:1.5rem;
+            font-weight:700;
+            color:#c56a1a;
+        }
+
+        .nav-links{
+            display:flex;
+            gap:25px;
+        }
+
+        .nav-links a{
+            color:#333;
+            font-weight:500;
+            transition:0.3s;
+        }
+
+        .nav-links a:hover{
+            color:#c56a1a;
+        }
+
+        .btn{
+            display:inline-block;
+            background:#c56a1a;
+            color:#fff;
+            padding:14px 28px;
+            border-radius:50px;
+            transition:0.3s;
+            font-weight:600;
+        }
+
+        .btn:hover{
+            background:#9d5414;
+            transform:translateY(-2px);
+        }
+
+        /* HERO */
+
+        .hero{
+            min-height:90vh;
+            display:flex;
+            align-items:center;
+            background:linear-gradient(to right,#fff6ed,#fff);
+            padding: 30px 0;
+        }
+
+        .hero-content{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:100px;
+            align-items:center;
+        }
+
+        .hero-text h1{
+            font-size:4rem;
+            line-height:1.1;
+            margin-bottom:20px;
+            color:#1f1f1f;
+        }
+
+        .hero-text p{
+            font-size:1.1rem;
+            color:#555;
+            margin-bottom:35px;
+            line-height:1.8;
+        }
+
+        .hero-buttons{
+            display:flex;
+            gap:20px;
+            flex-wrap:wrap;
+        }
+
+        .outline-btn{
+            border:2px solid #c56a1a;
+            color:#c56a1a;
+            background:transparent;
+        }
+
+        .outline-btn:hover{
+            background:#c56a1a;
+            color:#fff;
+        }
+
+        .hero-image img{
+            border-radius:30px;
+            box-shadow:0 20px 40px rgba(0,0,0,0.3);
+            object-fit:cover;
+            float: right;
+        }
+
+        /* FEATURES */
+
+        .features{
+            padding: 40px 0;
+            background:#fff;
+        }
+
+        .section-title{
+            text-align:center;
+            margin-bottom:30px;
+        }
+
+        .section-title2 {
+            text-align: center;
+            margin-bottom: 23px;
+            margin-top: 35px;
+        }   
+        .section-title h2{
+            font-size:2.5rem;
+            margin-bottom:15px;
+            color:#222;
+        }
+
+        .section-title p{
+            color:#666;
+            max-width:700px;
+            margin:auto;
+            line-height:1.7;
+        }
+
+        .feature-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:30px;
+        }
+
+        .feature-card{
+            background:#fff;
+            padding:35px;
+            cursor: pointer;
+            border-radius:25px;
+            box-shadow:0 8px 25px rgba(0, 0, 0, 0.2);
+            transition:0.3s;
+        }
+
+        .feature-card:hover{
+            transform:translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .feature-card h3{
+            margin:20px 0 15px;
+            color:#c56a1a;
+        }
+
+        .feature-card p{
+            color:#666;
+            line-height:1.7;
+        }
+
+        .icon{
+            width:70px;
+            height:70px;
+            background:#fff2e5;
+            border-radius:20px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:2rem;
+        }
+
+        /* RABBITS */
+
+        .rabbits{
+            padding: 40px 0px 70px 0px;
+            background:#f9f9f9;
+        }
+
+        .rabbit-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            gap:30px;
+        }
+
+        .rabbit-card{
+            background:#fff;
+            border-radius:25px;
+            overflow:hidden;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transition:0.3s;
+        }
+
+        .rabbit-card:hover{
+            transform:translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .rabbit-card img{
+            height:260px;
+            object-fit:cover;
+        }
+
+        .rabbit-info{
+            padding:25px;
+        }
+
+        .rabbit-info h3{
+            margin-bottom:12px;
+            color:#222;
+        }
+
+        .rabbit-info p{
+            color:#666;
+            line-height:1.7;
+            margin-bottom:20px;
+        }
+
+        .frozen-rabbits {
+            padding: 40px 0px 70px 0px;
+            background: white;
+        }
+
+        .frozen-rabbits .rabbit-card img {
+            height: 350px;
+            object-fit: cover;
+        }
+        /* CTA */
+        .cta{
+            padding: 30px 0;
+        }
+
+        .cta-box{
+            background:linear-gradient(to right,#c56a1a,#e89647);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            color:#fff;
+            border-radius:35px;
+            padding:70px 50px;
+            text-align:center;
+        }
+
+        .cta-box h2{
+            font-size:3rem;
+            margin-bottom:20px;
+        }
+
+        .cta-box p{
+            max-width:700px;
+            margin:0 auto 35px;
+            line-height:1.8;
+        }
+
+        .white-btn{
+            background:#fff;
+            color:#c56a1a;
+        }
+
+        .white-btn:hover{
+            background:#222;
+            color:#fff;
+        }
+
+      /* CONTACT LAYOUT */
+      .contact-wrapper {
+        Display: flex;
+        Gap: 40px;
+        Flex-wrap: wrap;
+        margin: auto;
+        padding: 40px 20px;
+        width: 100%;
+        max-width: 1200px;
+      }
+
+      .contact-left,
+      .contact-right {
+        Flex: 1;
+        Min-width: 280px;
+      }
+
+      /* MAP */
+      .contact-left iframe {
+        Width: 100%;
+        Height: 300px;
+        Border-radius: 10px;
+        Border: none;
+      }
+
+      .map-link {
+        Display: block;
+        Margin-top: 10px;
+        Color: var(--accent);
+        Text-decoration: none;
+      }
+
+      /* INFO */
+      .contact-info {
+        Margin-bottom: 20px;
+      }
+
+      .contact-info p {
+        Margin-bottom: 10px;
+      }
+
+      /* FORM */
+      Form {
+        Display: flex;
+        Flex-direction: column;
+        Gap: 10px;
+      }
+
+      Input,
+      Textarea {
+        Padding: 10px;
+        Border: 1px solid #ddd;
+        Border-radius: 6px;
+        Font-size: 14px;
+      }
+
+      .submit {
+        Padding: 12px;
+        font-size: 16px;
+        Cursor: pointer;
+        Border-radius: 6px;
+        border: 2px solid #c56a1a;
+        color: #c56a1a;
+        background: transparent;
+      }
+
+      .submit:hover {
+        background:#c56a1a;
+        color:#fff;
+      }
+
+        /* FOOTER */
+
+        footer{
+            background:#111;
+            color:#bbb;
+            padding:40px 0;
+        }
+
+        .footer-content{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            gap:20px;
+            flex-wrap:wrap;
+        }
+
+        .footer-content h3{
+            color:#fff;
+            margin-bottom:10px;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:900px){
+
+            .hero-content{
+                grid-template-columns:1fr;
+            }
+
+            .hero-text{
+                text-align:center;
+            }
+
+            .hero-buttons{
+                justify-content:center;
+            }
+
+            .hero-text h1{
+                font-size:3rem;
+            }
+
+            .hero-image img{
+                margin-right: 7px;
+            }
+        }
+
+        @media(max-width:600px){
+
+            .navbar{
+                flex-direction:column;
+                gap:15px;
+            }
+
+            .nav-links{
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+
+            .hero-text h1{
+                font-size:2.3rem;
+            }
+
+            .section-title h2{
+                font-size:2rem;
+            }
+
+            .cta-box h2{
+                font-size:2rem;
+            }
+
+            .cta-box{
+                padding:50px 25px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+        <div class="container navbar">
+            <div class="logo">Pure Protein Farms</div>
+
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#features">Why Us</a>
+                <a href="#rabbits">Rabbits</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+        <div class="container hero-content">
+
+            <div class="hero-text">
+                <h1>Healthy Rabbits For Modern Farming</h1>
+
+                <p>
+                    Premium rabbit breeding and farm management focused on quality,
+                    healthy growth, and reliable protein production.
+                    Pure Protein Farms combines modern care with sustainable farming.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#rabbits" class="btn">View Rabbits</a>
+                    <a href="https://wa.me/2348124892504" class="btn outline-btn">Contact Us</a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="img/hero image.jpeg" style="height: fit-content; width: fit-content;" alt="Rabbit Farm">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+
+    <section class="features" id="features">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Why Choose Us</h2>
+                <p>
+                    We focus on quality rabbit production using healthy feeding,
+                    clean housing systems, and careful breeding techniques.
+                </p>
+            </div>
+
+            <div class="feature-grid">
+
+                <div class="feature-card">
+                    <div class="icon">🐇</div>
+                    <h3>Healthy Breeds</h3>
+                    <p>
+                        Strong and fast-growing rabbits carefully raised for better survival and productivity.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">🌿</div>
+                    <h3>Natural Feeding</h3>
+                    <p>
+                        Balanced nutrition and proper feeding systems to maintain healthy rabbit growth.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">🏡</div>
+                    <h3>Clean Housing</h3>
+                    <p>
+                        Well-maintained cages and hygienic farm practices that reduce disease risk.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">📈</div>
+                    <h3>Fast Production</h3>
+                    <p>
+                        Efficient breeding cycles designed to support sustainable rabbit farming.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- RABBITS -->
+
+    <section class="rabbits" id="rabbits">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Available Rabbit Breeds</h2>
+                <p>
+                    Explore some of the healthy rabbit breeds available at Pure Protein Farms.
+                </p>
+            </div>
+
+            <div class="rabbit-grid">
+
+                <div class="rabbit-card">
+                    <img src="img/newzeland.jpeg" alt="White Rabbit">
+
+                    <div class="rabbit-info">
+                        <h3>New Zealand White Rabbit</h3>
+                        <p>
+                            Popular for meat production valued for its superior meat quality, rapid growth and excellent health.
+                        </p>
+
+                        <a href="https://wa.me/2348124892504" class="btn">Enquire</a>
+                    </div>
+                </div>
+
+                <div class="rabbit-card">
+                    <img src="img/califonian rabbit.jpeg" alt="Brown Rabbit">
+
+                    <div class="rabbit-info">
+                        <h3>California Rabbit</h3>
+                        <p>
+                            Highly productive meat breed valued for fast growth, strong health and excellent feed conversion.
+                        </p>
+
+                        <a href="https://wa.me/2348124892504" class="btn">Enquire</a>
+                    </div>
+                </div>
+
+                <div class="rabbit-card">
+                    <img src="img/cinchila.avif" alt="Rabbit">
+
+                    <div class="rabbit-info">
+                        <h3>Chinchilla Rabbit</h3>
+                        <p>
+                            Hardy multipurpose breed valued for both meat production, durability and efficient breeding.
+                        </p>
+
+                        <a href="https://wa.me/2348124892504" class="btn">Enquire</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<!-- FROZEN RABBITS -->
+    <section class="frozen-rabbits" id="frozen-rabbits">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>PREMIUM FROZEN RABBIT MEAT</h2>
+                <p>
+                    At Pure Protein Farms, we provide carefully processed, hygienically packaged frozen rabbit meat, sourced from healthy and well-raised rabbits, prepared under strict sanitary conditions to preserve freshness, taste, and nutritional value, rich protein content, and low fat levels.
+                </p>
+            </div>
+
+            <div class="rabbit-grid">
+
+                <div class="rabbit-card">
+                    <img src="img/whole rabbit.jpeg" alt="White Rabbit">
+
+                    <div class="rabbit-info">
+                        <h3>Premium Whole Rabbit</h3>
+                        <p>
+                            Carefully processed  frozen whole rabbit, ideal for families and health conscious consumers seeking tender, lean, and protein-rich meat. 
+                            Our whole rabbits are packaged to preserve freshness, natural flavor, and nutritional quality for a premium dining experience.
+                        </p>
+
+                        <a href="https://wa.me/2348124892504"  class="btn">Purchase</a>  
+                    </div>
+                </div>
+
+                <div class="rabbit-card">
+                    <img src="img/rabbit cuts.jpeg" alt="Brown Rabbit">
+
+                    <div class="rabbit-info">
+                        <h3>Premium Rabbit Cuts</h3>
+                        <p>
+                            Expertly prepared rabbit cuts selected for convenience, quality, and versatility in cooking. 
+                            Our premium cuts deliver soft texture, rich taste, high protein content, and low fat for healthy and delicious meals.
+                        </p>
+
+                        <a href="https://wa.me/2348124892504" class="btn">Purchase</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+
+    <section class="cta" id="contact">
+        <div class="container">
+
+            <div class="cta-box">
+                <h2>Start Your Rabbit Farming Journey</h2>
+
+                <p>
+                    Contact Pure Protein Farms today for healthy rabbits,
+                    breeding guidance, and reliable farm support.
+                </p>
+
+                <a href="https://wa.me/2348124892504" class="btn white-btn">Contact Pure Protein Farms</a>
+            </div>
+        </div>
+
+        <div class="contact-wrapper">
+
+        <!-- LEFT (MAP) -->
+        <div class="contact-left">
+             <iframe
+                src="https://www.google.com/maps?q=Masaka+Area+1+Nasarawa+State+Nigeria&output=embed"
+                loading="lazy">
+             </iframe>
+
+            <a href="https://maps.google.com/?q=Masaka+Area+1+Nasarawa+State+Nigeria"
+            class="map-link"
+            target="_blank">
+            View Larger Map
+            </a>
+        </div>
+
+        <!-- RIGHT (INFO + FORM) -->
+        <div class="contact-right">
+
+          <div class="contact-info">
+            <p><strong>Location:</strong> Area 1, Masaka Nasarawa State, Nigeria</p>
+            <p><strong>Phone:</strong> +234 (0) 812 489 2504</p>
+            <p><strong>Email:</strong> pureproteinfarms@gmail.com</p>
+          </div>
+ 
+          <form id="contact-form" action="https://formspree.io/f/xeendolk" method="POST"> 
+
+            <input type="text" name="user_name" placeholder="Name" required>
+            <input type="email" name="user_email" placeholder="Email" required>
+            <input type="text" name="subject" placeholder="Subject" required>
+
+            <textarea name="message" placeholder="Message" rows="5" required></textarea>
+
+            <button type="submit" class="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-content">
+            <div>
+                <h3>Pure Protein Farms</h3>
+                <p>Healthy Rabbits • Sustainable Farming • Modern Production</p>
+            </div>
+            <p>© 2026 Pure Protein Farms. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
