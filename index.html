@@ -6,6 +6,7 @@
     <title>Pure Protein Farms</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="script.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -793,20 +794,3 @@
 </body>
 </html>
 
-<!-- ADVERT SLIDER SCRIPT -->
-<script>
-    var myIndex = 0;
-    carousel();
-    
-    function carousel() {
-      var i;
-      var x = document.getElementsByClassName("mySlides");
-      for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";  
-      }
-      myIndex++;
-      if (myIndex > x.length) {myIndex = 1}    
-      x[myIndex-1].style.display = "block";  
-      setTimeout(carousel, 3000);    
-    }
-</script>
