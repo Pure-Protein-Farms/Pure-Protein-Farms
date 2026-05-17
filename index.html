@@ -19,7 +19,7 @@
 
         body{
             font-family:'Poppins',sans-serif;
-            background:#f8f8f8;
+            background-color: rgb(247, 247, 247);
             color:#222;
             overflow-x:hidden;
         }
@@ -38,6 +38,13 @@
             max-width:1200px;
             margin:auto;
             padding:0 20px;
+        }
+
+        .add-container {
+            width:100%;
+            margin:auto;
+            padding:0 0px;
+            background-color: white;
         }
 
         /* NAVBAR */
@@ -60,7 +67,7 @@
         .logo{
             font-size:1.5rem;
             font-weight:700;
-            color:#c56a1a;
+            color:rgb(103, 118, 41);
         }
 
         .nav-links{
@@ -75,21 +82,23 @@
         }
 
         .nav-links a:hover{
-            color:#c56a1a;
+            color:rgb(103, 118, 41);
         }
 
         .btn{
             display:inline-block;
-            background:#c56a1a;
-            color:#fff;
+            background:rgb(103, 118, 41);
+            color:white;
             padding:14px 28px;
+            border: 2px solid rgb(103, 118, 41);
             border-radius:50px;
             transition:0.3s;
             font-weight:600;
         }
 
         .btn:hover{
-            background:#9d5414;
+            background: transparent;
+            color: rgb(103, 118, 41);
             transform:translateY(-2px);
         }
 
@@ -99,7 +108,7 @@
             min-height:90vh;
             display:flex;
             align-items:center;
-            background:linear-gradient(to right,#fff6ed,#fff);
+            background-color: rgb(145, 167, 58,);
             padding: 30px 0;
         }
 
@@ -131,13 +140,13 @@
         }
 
         .outline-btn{
-            border:2px solid #c56a1a;
-            color:#c56a1a;
+            border:2px solid rgb(103, 118, 41);
+            color:rgb(103, 118, 41);
             background:transparent;
         }
 
         .outline-btn:hover{
-            background:#c56a1a;
+            background:rgb(103, 118, 41);
             color:#fff;
         }
 
@@ -148,6 +157,7 @@
             float: right;
             width: fit-content;
         }
+
 
         /* FEATURES */
 
@@ -212,7 +222,7 @@
         .icon{
             width:70px;
             height:70px;
-            background:#fff2e5;
+            background:rgb(239, 255, 176);
             border-radius:20px;
             display:flex;
             align-items:center;
@@ -224,7 +234,6 @@
 
         .rabbits{
             padding: 40px 0px 70px 0px;
-            background:#f9f9f9;
         }
 
         .rabbit-grid{
@@ -276,13 +285,47 @@
             height: 350px;
             object-fit: cover;
         }
+
+          /* ADVERT */
+        .addvert{
+            width: 100%;
+            padding: 0px 30px;
+            margin: auto;
+            height: 262px;
+            background-color: white;  
+        }
+
+        .slider {
+            height: 220px;
+            width: 100%;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            max-width: 1160px;
+            margin: auto;
+        }
+
+        .slide-show {
+            width: 100%;
+            border-radius: 35px;
+            max-width: 1160px; 
+            margin: auto;
+        }
+         .mySlides {
+            width: 100%;
+            margin: auto;
+            border-radius: 35px;
+            max-width: 1160px;
+        }
+
+
+
         /* CTA */
         .cta{
             padding: 30px 0;
+            margin-top: 40px;
         }
 
         .cta-box{
-            background:linear-gradient(to right,#c56a1a,#e89647);
+            background:linear-gradient(to right,rgb(103, 118, 41), rgb(178, 201, 87));
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
             color:#fff;
             border-radius:35px;
@@ -303,11 +346,12 @@
 
         .white-btn{
             background:#fff;
-            color:#c56a1a;
+            color:rgb(103, 118, 41);
+            border: none;
         }
 
         .white-btn:hover{
-            background:#222;
+            background:rgb(103, 118, 41);
             color:#fff;
         }
 
@@ -371,21 +415,20 @@
         Padding: 12px;
         font-size: 16px;
         Cursor: pointer;
-        Border-radius: 6px;
-        border: 2px solid #c56a1a;
-        color: #c56a1a;
-        background: transparent;
+        Border-radius: 25px;
+        border: 2px solid rgb(103, 118, 41);
+        color: white;
+        background: rgb(103, 118, 41);
       }
 
       .submit:hover {
-        background:#c56a1a;
-        color:#fff;
+        background:rgb(63, 75, 14);
       }
 
         /* FOOTER */
 
         footer{
-            background:#111;
+            background: rgb(103, 118, 41);
             color:#bbb;
             padding:40px 0;
         }
@@ -503,6 +546,7 @@
         </div>
     </section>
 
+    
     <!-- FEATURES -->
 
     <section class="features" id="features">
@@ -656,6 +700,30 @@
         </div>
     </section>
 
+
+    <!-- ADVERT -->
+    <section>
+        <div class="add-container">
+            <div class="addvert">
+                <div class="slider">
+                <div class="slide-show">
+                    <div>
+
+                        <div class="mySlides" style="display: block;">
+                            <img class="fade" src="img/slide1.jpeg" style="width:100%; height: 220px; max-width: 1160px; margin-bottom: 40px;">
+                        </div>
+                        
+                        <div class="mySlides" style="display: none;">
+                            <img class="fade" src="img/slide2.jpeg" style="width:100%; height:220px; max-width: 1160px; margin-bottom: 40px;">
+                        </div>
+                        
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA -->
 
     <section class="cta" id="contact">
@@ -724,3 +792,21 @@
     </footer>
 </body>
 </html>
+
+<!-- ADVERT SLIDER SCRIPT -->
+<script>
+    var myIndex = 0;
+    carousel();
+    
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}    
+      x[myIndex-1].style.display = "block";  
+      setTimeout(carousel, 3000);    
+    }
+</script>
